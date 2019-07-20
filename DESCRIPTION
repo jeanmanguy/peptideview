@@ -14,6 +14,8 @@ LazyData: true
 RoxygenNote: 6.1.1
 Imports: 
     tibble,
-    magrittr
+    magrittr,
+    crayon,
+    pillar
 Suggests: 
     testthat (>= 2.1.0)
