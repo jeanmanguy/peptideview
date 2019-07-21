@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of peptideview is to ...
+The goal of peptideview is to visualise peptides sequences.
 
 ## Installation
 
@@ -28,11 +28,31 @@ You can install the development version of peptideview with:
 remotes::install_github("jeanmanguy/peptideview")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+### Coloured peptide sequence in the console
 
-```{r example}
+```{r example-simple}
 library(peptideview)
-## basic example code
+
+peptide("KIAALKE")
 ```
+
+It also works in a tibble:
+
+```{r example-tibble}
+library(peptideview)
+
+tibble::tibble(sequences = peptide(c("KIAALKE", "KIAVLKE", "EIAALKE")))
+```
+
+(it doesn't really show here but it works in the console)
+
+### Coloured peptide sequence htmlwidget
+
+```{r example-htmlwidget}
+library(peptideview)
+
+view_peptide("KIAALKE")
+```
+
