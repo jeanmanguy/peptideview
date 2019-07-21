@@ -1,0 +1,87 @@
+span.amino_acid {
+	font-family: "monospace";
+	display: inline-block;
+	width: 12px;
+	text-align: center;
+}
+
+.Alanine_clustal {
+	background-color: #197fe5;
+}
+
+.Cysteine_clustal {
+	background-color: #E57F7F;
+}
+
+.Aspartic_acid_clustal {
+	background-color: #8C60C2;
+}
+
+.Glutamic_acid_clustal {
+	background-color: #8C60C2;
+}
+
+.Phenylalanine_clustal {
+	background-color: #197fe5;
+}
+
+.Glycine_clustal {
+	background-color: #e5994c;
+}
+
+.Histidine_clustal {
+	background-color: #00B2B2;
+}
+
+.Isoleucine_clustal {
+	background-color: #197fe5;
+}
+
+.Leucine_clustal {
+	background-color: #197fe5;
+}
+
+.Lysine_clustal {
+	background-color: #e53319;
+}
+
+.Methionine_clustal {
+	background-color: #197fe5;
+}
+
+.Asparagine_clustal {
+	background-color: #3FBE4F;
+}
+
+.Proline_clustal {
+	background-color: #cccc00;
+}
+
+.Glutamine_clustal {
+	background-color: #3FBE4F;
+}
+
+.Arginine_clustal {
+	background-color: #e53319;
+}
+
+.Serine_clustal {
+	background-color: #3FBE4F;
+}
+
+.Threonine_clustal {
+	background-color: #3FBE4F;
+}
+
+.Valine_clustal {
+	background-color: #197fe5;
+}
+
+.Tryptophan_clustal {
+	background-color: #00B2B2;
+}
+
+.Tyrosine_clustal {
+	background-color: #00B2B2;
+}
+

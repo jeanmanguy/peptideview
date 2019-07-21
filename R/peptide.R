@@ -1,10 +1,23 @@
+#' @title Peptide
+#' @rdname peptide-class
+#' @description Simple class for peptidic sequences. Display the sequence in colors in the console. Also works in a [tibble][tibble::tibble-package].
+#' @param x a string
+#' @return an obect of class `peptide`
+#' @examples
+#' peptide("KIAALKE")
+
+#' @rdname peptide-class
 #' @export
-peptide <- function(sequence) {
-	as_peptide(as.character(sequence))
+peptide <- function(x) {
+	as_peptide(as.character(x))
 }
 
+#' @rdname peptide-class
+#' @importFrom assertthat assert_that
+#' @importFrom purrr map_lgl
 #' @export
 as_peptide <- function(x) {
+	assert_that(all(map_lgl(x, is_peptide)))
 	structure(x, class = "peptide")
 }
 
@@ -29,10 +42,9 @@ format.peptide <- function(x, ..., formatter = peptide_formatter) {
 	format(ret, justify = "right")
 }
 
+#' @importFrom purrr map_chr
 peptide_formatter <- function(x) {
-	# add crayon stuff
-	str <- strsplit(x, NULL)[[1]]
-	format(x, justify = "left")
+	format(map_chr(x, colour_peptide), justify = "left")
 }
 
 
@@ -55,8 +67,6 @@ pillar_shaft.peptide <- function(x, ...) {
 	out[is.na(x)] <- NA
 	pillar::new_pillar_shaft_simple(out, align = "left", min_width = 5L)
 }
-
-
 
 #' @importFrom pillar is_vector_s3
 #' @export

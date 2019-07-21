@@ -1,5 +1,5 @@
 Package: peptideview
-Title: Visualisation of peptide sequences.
+Title: Visualisation of peptide sequences
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Jean",
@@ -12,10 +12,19 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Roxygen: list(markdown = TRUE)
+Depends: 
+    R (>= 3.5.0)
 Imports: 
     tibble,
     magrittr,
     crayon,
-    pillar
+    pillar,
+    assertthat,
+    glue,
+    purrr,
+    stringr,
+    htmltools,
+    htmlwidgets
 Suggests: 
     testthat (>= 2.1.0)
