@@ -6,9 +6,11 @@ colour_amino_acid <- function(aa, colour_scheme = colour_scheme_clustal) {
 
 #' @importFrom glue glue
 #' @importFrom stringr str_replace_all
+#' @importFrom htmltools span
 colour_amino_acid_html <- function(aa, colour_scheme = "clustal") {
 	aa_class <- str_replace_all(amino_acids[aa], " ", "_")
-  glue("<span class = 'peptideview amino_acid {aa_class}_{colour_scheme}'>{aa}</span>")
+	span_class <- glue("peptideview amino_acid {aa_class}_{colour_scheme}")
+	as.character(glue("<span class = '{span_class}'>{aa}</span>"))
 }
 
 #' @importFrom purrr map_chr

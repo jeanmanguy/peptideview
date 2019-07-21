@@ -2,13 +2,14 @@
 #' @param sequence a string
 #' @importFrom assertthat assert_that
 #' @importFrom glue glue_collapse
+#' @importFrom purrr map
 #' @export
 #' @examples
 #' view_peptide("KIAALKE")
 view_peptide <- function(sequence) {
 	assert_that(is_peptide(sequence))
 	chain <- strsplit(sequence, NULL)[[1]]
-	aas <- map_chr(toupper(chain), colour_amino_acid_html)
+	aas <- map(toupper(chain), colour_amino_acid_html)
 	view_peptide_widget(glue_collapse(aas, sep = ""))
 }
 
@@ -16,7 +17,7 @@ view_peptide <- function(sequence) {
 #' @importFrom htmltools HTML
 view_peptide_widget <- function(peptide_html) {
 
-	html <- HTML(peptide_html)
+	html <- HTML(as.character(peptide_html))
 
 	if (!requireNamespace("htmlwidgets", quietly = TRUE)) {
 		stop("htmlwidgets package required for str_view(). \nPlease install.packages(\"htmlwidgets\") to use this functionality.",
